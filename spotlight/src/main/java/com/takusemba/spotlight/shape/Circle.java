@@ -12,11 +12,11 @@ public class Circle implements Shape {
 
   private float radius;
 
-  public Circle(float radius) {
+  public Circle(final float radius) {
     this.radius = radius;
   }
 
-  @Override public void draw(Canvas canvas, PointF point, float value, Paint paint) {
+  @Override public void draw(final Canvas canvas, final PointF point, final float value, final Paint paint) {
     canvas.drawCircle(point.x, point.y, value * radius, paint);
   }
 }
