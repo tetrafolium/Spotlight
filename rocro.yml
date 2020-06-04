@@ -15,6 +15,9 @@ inspecode:
     auto-fix: true
     thresholds: { num-issues: 999 }
 
+  detekt:
+    thresholds: { num-issues: 999 }
+
   fortify:
     thresholds: { num-issues: 999 }
 
@@ -28,6 +31,10 @@ inspecode:
     thresholds: { num-issues: 999 }
 
   jscpd:
+    thresholds: { num-issues: 999 }
+
+  ktlint:
+    auto-fix: true
     thresholds: { num-issues: 999 }
 
   misspell:
@@ -45,8 +52,8 @@ inspecode:
     auto-fix: true
     thresholds: { num-issues: 999 }
 
-  understand:    # not supported yet ??
-    thresholds: { num-issues: 999 }
+  #understand:    # not supported yet ??
+  #  thresholds: { num-issues: 999 }
 
   unused:
     thresholds: { num-issues: 999 }
