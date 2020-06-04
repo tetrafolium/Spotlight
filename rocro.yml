@@ -4,19 +4,19 @@ inspecode:
     auto-fix: true
     thresholds: { num-issues: 13 }
 
-  cpd:
-    thresholds: { num-issues: 999 }
-
   checkstyle:
     auto-fix: true
-    thresholds: { num-issues: 999 }
+    thresholds: { num-issues: 282 }
 
   clang-format:
     auto-fix: true
-    thresholds: { num-issues: 999 }
+    thresholds: { num-issues: 9 }
+
+  cpd:
+    thresholds: { num-issues: 0 }
 
   detekt:
-    thresholds: { num-issues: 999 }
+    thresholds: { num-issues: 17 }
 
   #### not supported yet ??
   #fortify:
@@ -29,14 +29,14 @@ inspecode:
     thresholds: { num-issues: 0 }
 
   infer:
-    thresholds: { num-issues: 999 }
+    thresholds: { num-issues: 0 }
 
   jscpd:
-    thresholds: { num-issues: 999 }
+    thresholds: { num-issues: 1 }
 
   ktlint:
     auto-fix: true
-    thresholds: { num-issues: 999 }
+    thresholds: { num-issues: 19 }
 
   misspell:
     auto-fix: true
@@ -44,18 +44,20 @@ inspecode:
 
   pmd:
     auto-fix: true
-    thresholds: { num-issues: 999 }
+    thresholds: { num-issues: 1 }
 
-  spotbugs:
-    thresholds: { num-issues: 999 }
+  ## Classfiles/jarfiles of targets are not specified.
+  ## Please specify targets with the "-targets", "-project" or "-analyzeFromFile" option.
+  #spotbugs:
+  #  thresholds: { num-issues: 999 }
 
   uncrustify:
     auto-fix: true
-    thresholds: { num-issues: 999 }
+    thresholds: { num-issues: 13 }
 
   #### not supported yet ??
   #understand:
   #  thresholds: { num-issues: 999 }
 
   unused:
-    thresholds: { num-issues: 999 }
+    thresholds: { num-issues: 2 }
