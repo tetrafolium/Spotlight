@@ -34,11 +34,11 @@ inspecode:
     thresholds: { num-issues: 0 }
 
   jscpd:
-    thresholds: { num-issues: 1 }
+    thresholds: { num-issues: 2 }
 
   ktlint:
     auto-fix: true
-    thresholds: { num-issues: 19 }
+    thresholds: { num-issues: 127 }
 
   misspell:
     auto-fix: true
@@ -51,7 +51,7 @@ inspecode:
   spotbugs:
     options:
       -targets: app
-    thresholds: { num-issues: 286 }
+    thresholds: { num-issues: 189 }   # codelift#2363 ... now found 0 issues.
 
   uncrustify:
     auto-fix: true
