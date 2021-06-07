@@ -12,15 +12,17 @@ inspecode:
     auto-fix: true
     thresholds: { num-issues: 9 }
 
+  # coverity:
+  #   thresholds: { num-issues: 999 }
+
   cpd:
     thresholds: { num-issues: 0 }
 
   detekt:
     thresholds: { num-issues: 17 }
 
-  #### not supported yet ??
-  #fortify:
-  #  thresholds: { num-issues: 999 }
+  # fortify:
+  #   thresholds: { num-issues: 999 }
 
   fossology:
     thresholds: { num-issues: 4 }
