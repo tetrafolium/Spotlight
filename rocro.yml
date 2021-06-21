@@ -51,7 +51,7 @@ inspecode:
   spotbugs:
     options:
       -targets: app
-    thresholds: { num-issues: 189 }   # codelift#2363 ... now found 0 issues.
+    thresholds: { num-issues: 0 }
 
   uncrustify:
     auto-fix: true
