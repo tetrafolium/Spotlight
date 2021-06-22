@@ -38,11 +38,11 @@ public abstract class AbstractTargetBuilder<T extends AbstractTargetBuilder<T, S
         return contextWeakReference.get();
     }
 
-    public AbstractTargetBuilder(@NonNull Activity context) {
+    public AbstractTargetBuilder(final @NonNull Activity context) {
         contextWeakReference = new WeakReference<>(context);
     }
 
-    public T setPoint(@NonNull View view) {
+    public T setPoint(final @NonNull View view) {
         int[] location = new int[2];
         view.getLocationInWindow(location);
         int x = location[0] + view.getWidth() / 2;
@@ -50,17 +50,17 @@ public abstract class AbstractTargetBuilder<T extends AbstractTargetBuilder<T, S
         return setPoint(x, y);
     }
 
-    public T setPoint(float x, float y) {
+    public T setPoint(final float x, final float y) {
         setPoint(new PointF(x, y));
         return self();
     }
 
-    public T setPoint(@NonNull PointF point) {
+    public T setPoint(final @NonNull PointF point) {
         this.point = point;
         return self();
     }
 
-    public T setShape(Shape shape) {
+    public T setShape(final Shape shape) {
         if (shape == null) {
             throw new IllegalArgumentException("Shape cannot be null");
         }
@@ -68,12 +68,12 @@ public abstract class AbstractTargetBuilder<T extends AbstractTargetBuilder<T, S
         return self();
     }
 
-    public T setDuration(@NonNull long duration) {
+    public T setDuration(final @NonNull long duration) {
         this.duration = duration;
         return self();
     }
 
-    public T setAnimation(@NonNull TimeInterpolator animation) {
+    public T setAnimation(final @NonNull TimeInterpolator animation) {
         this.animation = animation;
         return self();
     }

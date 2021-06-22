@@ -29,7 +29,7 @@ class SpotlightView extends FrameLayout {
     @ColorRes private int overlayColor;
     private Target currentTarget;
 
-    public SpotlightView(@NonNull Context context, @ColorRes int overlayColor,
+    public SpotlightView(final @NonNull Context context, final @ColorRes int overlayColor,
                          final OnSpotlightListener listener) {
         super(context, null);
         this.overlayColor = overlayColor;
@@ -40,7 +40,7 @@ class SpotlightView extends FrameLayout {
         setLayoutParams(new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                         ViewGroup.LayoutParams.MATCH_PARENT));
         setOnClickListener(new OnClickListener() {
-            @Override public void onClick(View v) {
+            @Override public void onClick(final View v) {
                 if (animator != null && !animator.isRunning() && (float) animator.getAnimatedValue() > 0) {
                     if (listener != null) listener.onSpotlightViewClicked();
                 }
@@ -48,7 +48,7 @@ class SpotlightView extends FrameLayout {
         });
     }
 
-    @Override protected void onDraw(Canvas canvas) {
+    @Override protected void onDraw(final Canvas canvas) {
         super.onDraw(canvas);
         paint.setColor(ContextCompat.getColor(getContext(), overlayColor));
         canvas.drawRect(0, 0, getWidth(), getHeight(), paint);
@@ -58,8 +58,8 @@ class SpotlightView extends FrameLayout {
         }
     }
 
-    void startSpotlight(long duration, TimeInterpolator animation,
-                        AbstractAnimatorListener listener) {
+    void startSpotlight(final long duration, final TimeInterpolator animation,
+                        final AbstractAnimatorListener listener) {
         ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(this, "alpha", 0f, 1f);
         objectAnimator.setDuration(duration);
         objectAnimator.setInterpolator(animation);
@@ -67,8 +67,8 @@ class SpotlightView extends FrameLayout {
         objectAnimator.start();
     }
 
-    void finishSpotlight(long duration, TimeInterpolator animation,
-                         AbstractAnimatorListener listener) {
+    void finishSpotlight(final long duration, final TimeInterpolator animation,
+                         final AbstractAnimatorListener listener) {
         ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(this, "alpha", 1f, 0f);
         objectAnimator.setDuration(duration);
         objectAnimator.setInterpolator(animation);
@@ -76,11 +76,11 @@ class SpotlightView extends FrameLayout {
         objectAnimator.start();
     }
 
-    void turnUp(Target target, AbstractAnimatorListener listener) {
+    void turnUp(final Target target, final AbstractAnimatorListener listener) {
         currentTarget = target;
         animator = ValueAnimator.ofFloat(0f, 1f);
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-            @Override public void onAnimationUpdate(ValueAnimator animation) {
+            @Override public void onAnimationUpdate(final ValueAnimator animation) {
                 SpotlightView.this.invalidate();
             }
         });
@@ -90,14 +90,14 @@ class SpotlightView extends FrameLayout {
         animator.start();
     }
 
-    void turnDown(AbstractAnimatorListener listener) {
+    void turnDown(final AbstractAnimatorListener listener) {
         if (currentTarget == null) {
             return;
         }
 
         animator = ValueAnimator.ofFloat(1f, 0f);
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-            @Override public void onAnimationUpdate(ValueAnimator animation) {
+            @Override public void onAnimationUpdate(final ValueAnimator animation) {
                 SpotlightView.this.invalidate();
             }
         });
