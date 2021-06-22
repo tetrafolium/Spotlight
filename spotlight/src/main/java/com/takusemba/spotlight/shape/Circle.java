@@ -10,13 +10,13 @@ import android.graphics.PointF;
  */
 public class Circle implements Shape {
 
-    private float radius;
+  private float radius;
 
-    public Circle(final float radius) {
-        this.radius = radius;
-    }
+  public Circle(final float radius) { this.radius = radius; }
 
-    @Override public void draw(final Canvas canvas, final PointF point, final float value, final Paint paint) {
-        canvas.drawCircle(point.x, point.y, value * radius, paint);
-    }
+  @Override
+  public void draw(final Canvas canvas, final PointF point, final float value,
+                   final Paint paint) {
+    canvas.drawCircle(point.x, point.y, value * radius, paint);
+  }
 }
