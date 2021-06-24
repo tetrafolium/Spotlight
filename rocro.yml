@@ -1,9 +1,8 @@
 inspecode:
 
   spotbugs:
-  - options:
-      -targets: app
-    thresholds: { num-issues: 999 }
-  - options:
-      -targets: spotlight
-    thresholds: { num-issues: 999 }
+    options:
+      -targets:
+        - app               # 0 issues
+        - spotlight         # 4 issues
+    thresholds: { num-issues: 4 }
