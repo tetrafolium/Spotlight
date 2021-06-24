@@ -116,7 +116,7 @@ CustomTarget customTarget = new CustomTarget.Builder(this)
 
 ## Skip Target, Skip Spotlight
 
-you can skip the current target or skip the all comming targets.
+you can skip the current target or skip the all coming targets.
 
 ```java
 Spotlight spotlight = Spotlight.with(this)...start();
