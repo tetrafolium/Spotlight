@@ -10,39 +10,44 @@ import com.takusemba.spotlight.shape.Shape;
 
 /**
  * CustomTarget can set your own custom view for a overlay.
- * If you do not care about much about a overlay, consider using {@link SimpleTarget} instead.
+ * If you do not care about much about a overlay, consider using {@link
+ *SimpleTarget} instead.
  **/
 public class CustomTarget extends Target {
 
-    private CustomTarget(final Shape shape, final PointF point, final View overlay, final long duration,
-                         final TimeInterpolator animation, final OnTargetStateChangedListener listener) {
-        super(shape, point, overlay, duration, animation, listener);
+  private CustomTarget(final Shape shape, final PointF point,
+                       final View overlay, final long duration,
+                       final TimeInterpolator animation,
+                       final OnTargetStateChangedListener listener) {
+    super(shape, point, overlay, duration, animation, listener);
+  }
+
+  public static class Builder
+      extends AbstractTargetBuilder<Builder, CustomTarget> {
+
+    @Override
+    protected Builder self() {
+      return this;
     }
 
-    public static class Builder extends AbstractTargetBuilder<Builder, CustomTarget> {
+    private View overlay;
 
-        @Override protected Builder self() {
-            return this;
-        }
+    public Builder(final Activity context) { super(context); }
 
-        private View overlay;
-
-        public Builder(final Activity context) {
-            super(context);
-        }
-
-        public Builder setOverlay(final @LayoutRes int layoutId) {
-            this.overlay = getContext().getLayoutInflater().inflate(layoutId, null);
-            return this;
-        }
-
-        public Builder setOverlay(final View overlay) {
-            this.overlay = overlay;
-            return this;
-        }
-
-        @Override public CustomTarget build() {
-            return new CustomTarget(shape, point, overlay, duration, animation, listener);
-        }
+    public Builder setOverlay(final @LayoutRes int layoutId) {
+      this.overlay = getContext().getLayoutInflater().inflate(layoutId, null);
+      return this;
     }
+
+    public Builder setOverlay(final View overlay) {
+      this.overlay = overlay;
+      return this;
+    }
+
+    @Override
+    public CustomTarget build() {
+      return new CustomTarget(shape, point, overlay, duration, animation,
+                              listener);
+    }
+  }
 }
