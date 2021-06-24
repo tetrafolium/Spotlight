@@ -15,13 +15,13 @@ public class RoundedRectangle implements Shape {
     private float width;
     private float radius;
 
-    public RoundedRectangle(float height, float width, float radius) {
+    public RoundedRectangle(final float height, final float width, final float radius) {
         this.height = height;
         this.width = width;
         this.radius = radius;
     }
 
-    @Override public void draw(Canvas canvas, PointF point, float value, Paint paint) {
+    @Override public void draw(final Canvas canvas, final PointF point, final float value, final Paint paint) {
         float halfWidth = width / 2 * value;
         float halfHeight = height / 2 * value;
         float left = point.x - halfWidth;

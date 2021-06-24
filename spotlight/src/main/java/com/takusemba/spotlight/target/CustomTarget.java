@@ -14,8 +14,8 @@ import com.takusemba.spotlight.shape.Shape;
  **/
 public class CustomTarget extends Target {
 
-    private CustomTarget(Shape shape, PointF point, View overlay, long duration,
-                         TimeInterpolator animation, OnTargetStateChangedListener listener) {
+    private CustomTarget(final Shape shape, final PointF point, final View overlay, final long duration,
+                         final TimeInterpolator animation, final OnTargetStateChangedListener listener) {
         super(shape, point, overlay, duration, animation, listener);
     }
 
@@ -27,16 +27,16 @@ public class CustomTarget extends Target {
 
         private View overlay;
 
-        public Builder(Activity context) {
+        public Builder(final Activity context) {
             super(context);
         }
 
-        public Builder setOverlay(@LayoutRes int layoutId) {
+        public Builder setOverlay(final @LayoutRes int layoutId) {
             this.overlay = getContext().getLayoutInflater().inflate(layoutId, null);
             return this;
         }
 
-        public Builder setOverlay(View overlay) {
+        public Builder setOverlay(final View overlay) {
             this.overlay = overlay;
             return this;
         }

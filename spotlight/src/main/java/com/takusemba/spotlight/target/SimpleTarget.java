@@ -19,8 +19,8 @@ import com.takusemba.spotlight.shape.Shape;
  **/
 public class SimpleTarget extends Target {
 
-    private SimpleTarget(Shape shape, PointF point, View overlay, long duration,
-                         TimeInterpolator animation, OnTargetStateChangedListener listener) {
+    private SimpleTarget(final Shape shape, final PointF point, final View overlay, final long duration,
+                         final TimeInterpolator animation, final OnTargetStateChangedListener listener) {
         super(shape, point, overlay, duration, animation, listener);
     }
 
@@ -34,26 +34,26 @@ public class SimpleTarget extends Target {
         private CharSequence description;
         private PointF overlayPoint;
 
-        public Builder(@NonNull Activity context) {
+        public Builder(final @NonNull Activity context) {
             super(context);
         }
 
-        public Builder setTitle(CharSequence title) {
+        public Builder setTitle(final CharSequence title) {
             this.title = title;
             return this;
         }
 
-        public Builder setDescription(CharSequence description) {
+        public Builder setDescription(final CharSequence description) {
             this.description = description;
             return this;
         }
 
-        public Builder setOverlayPoint(PointF overlayPoint) {
+        public Builder setOverlayPoint(final PointF overlayPoint) {
             this.overlayPoint = overlayPoint;
             return this;
         }
 
-        public Builder setOverlayPoint(float x, float y) {
+        public Builder setOverlayPoint(final float x, final float y) {
             this.overlayPoint = new PointF(x, y);
             return this;
         }
