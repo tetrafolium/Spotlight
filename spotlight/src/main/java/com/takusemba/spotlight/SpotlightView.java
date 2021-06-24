@@ -44,11 +44,9 @@ class SpotlightView extends FrameLayout {
     setOnClickListener(new OnClickListener() {
       @Override
       public void onClick(final View v) {
-        if (animator != null && !animator.isRunning() &&
-            (float)animator.getAnimatedValue() > 0) {
-          if (listener != null)
-            listener.onSpotlightViewClicked();
-        }
+        if ((animator != null && !animator.isRunning() &&
+            (float)animator.getAnimatedValue() > 0) && (listener != null))
+          listener.onSpotlightViewClicked();
       }
     });
   }
