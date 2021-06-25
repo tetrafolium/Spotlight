@@ -1,1 +1,1 @@
-include ':app', ':spotlight'
+include ':src:app', ':src:spotlight'
