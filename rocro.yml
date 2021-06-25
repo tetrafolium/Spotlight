@@ -6,6 +6,6 @@ inspecode:
     spotbugs:
       options:
         -targets:
-          - src_app           # 0 issues
-          - src_spotlight     # 4 issues
+          - src/app           # 0 issues
+          - src/spotlight     # 4 issues
       thresholds: { num-issues: 999 }

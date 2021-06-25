@@ -1,1 +1,4 @@
-include ':app', ':spotlight'
+include 'app', 'spotlight'
+
+project('app').projectDir = new File(settingsDir, 'src/app')
+project('spotlight').projectDir = new File(settingsDir, 'src/spotlight')
