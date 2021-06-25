@@ -3,67 +3,9 @@ inspecode:
 
   tools:
 
-    astyle:
-      auto-fix: true
-      thresholds: { num-issues: 13 }
-
-    checkstyle:
-      auto-fix: true
-      thresholds: { num-issues: 282 }
-
-    clang-format:
-      auto-fix: true
-      thresholds: { num-issues: 9 }
-
-    # coverity:
-    #   thresholds: { num-issues: 999 }
-
-    cpd:
-      thresholds: { num-issues: 0 }
-
-    detekt:
-      thresholds: { num-issues: 17 }
-
-    # fortify:
-    #   thresholds: { num-issues: 999 }
-
-    fossology:
-      thresholds: { num-issues: 4 }
-
-    grep:
-      thresholds: { num-issues: 0 }
-
-    infer:
-      thresholds: { num-issues: 0 }
-
-    jscpd:
-      thresholds: { num-issues: 2 }
-
-    ktlint:
-      auto-fix: true
-      thresholds: { num-issues: 127 }
-
-    misspell:
-      auto-fix: true
-      thresholds: { num-issues: 1 }
-
-    pmd:
-      auto-fix: true
-      thresholds: { num-issues: 1 }
-
     spotbugs:
       options:
         -targets:
-          - app               # 0 issues
-          - spotlight         # 4 issues
-      thresholds: { num-issues: 4 }
-
-    uncrustify:
-      auto-fix: true
-      thresholds: { num-issues: 13 }
-
-    #understand:
-    #  thresholds: { num-issues: 999 }
-
-    unused:
-      thresholds: { num-issues: 2 }
+          - subtree/Spotlight/app           # 0 issues
+          - subtree/Spotlight/spotlight     # 4 issues
+      thresholds: { num-issues: 999 }
